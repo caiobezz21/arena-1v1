@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="styles.css"></head><body>
 <canvas id="c"></canvas><div id="log"></div>
 <div class="ov menu-screen" id="menu">
- <header class="menu-head"><div><span class="eyebrow">ARENA ISOMÉTRICA · 1v1</span><h1>Escolha seu campeão</h1><p>Quatro estilos de combate. Escolha o seu e confirme para entrar na arena.</p></div><button class="notes-open" id="openNotes">✦ Notas de atualização</button></header>
+ <header class="menu-head"><div><span class="eyebrow">ARENA ISOMÉTRICA · 1v1</span><h1>Escolha seu campeão</h1><p>Seis estilos de combate. Escolha o seu e confirme para entrar na arena.</p></div><button class="notes-open" id="openNotes">✦ Notas de atualização</button></header>
  <section class="menu-options" aria-label="Opções da partida">
   <div class="option-group"><span class="option-label">MODO</span><div><button class="m on" onclick="setMode(0)">🤖 Um jogador · CPU</button><button class="m" onclick="setMode(1)">🌐 Multiplayer online</button></div></div>
   <div class="option-group"><span class="option-label">ARENA</span><div><button class="mb on" onclick="setMap(0)">⭕ Arena Circular</button><button class="mb" onclick="setMap(1)">🏛️ Ruínas Vivas</button></div></div>
@@ -15,7 +15,7 @@
 <div class="ov notes-screen" id="patches" style="display:none" role="dialog" aria-modal="true" aria-labelledby="notesTitle">
  <div class="notes-panel"><div class="notes-head"><div><span class="eyebrow">ARENA ISOMÉTRICA</span><h1 id="notesTitle">Notas de atualização</h1></div><button id="closeNotes" class="notes-close" aria-label="Fechar notas">✕</button></div>
   <p class="notes-intro">Resumo dos recursos disponíveis nesta versão.</p>
-  <article class="note-entry"><span class="note-tag">SELEÇÃO</span><h2>Escolha seu campeão</h2><p>Cartões com retrato, função, vida máxima, ataque básico e descrição completa das quatro habilidades.</p></article>
+  <article class="note-entry"><span class="note-tag">SELEÇÃO</span><h2>Escolha seu campeão</h2><p>Cartões com retrato, função, vida máxima, ataque básico e descrição das habilidades ativas e passivas.</p></article>
   <article class="note-entry"><span class="note-tag">PARTIDAS</span><h2>Dois modos e duas arenas</h2><p>Jogue contra a CPU ou entre numa sala online. Escolha entre a Arena Circular e as Ruínas Vivas.</p></article>
   <article class="note-entry"><span class="note-tag">RUÍNAS VIVAS</span><h2>Eventos e itens de arena</h2><p>Enfrente eventos dinâmicos, desvie dos blocos e destrua flores para obter bônus.</p></article>
   <article class="note-entry"><span class="note-tag">CONTROLES</span><h2>Teclado, mouse e controle</h2><p>WASD move, mouse mira, clique ataca e Q/E/R/F ativam habilidades. Também há suporte a controle Xbox.</p></article>

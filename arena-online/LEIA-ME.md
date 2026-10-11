@@ -8,7 +8,7 @@ Jogo de arena 1v1 com modo contra CPU e salas multiplayer via WebSocket.
 - `styles.css`: estilos e layout responsivo.
 - `game.js`: lógica da partida, personagens, arenas, controles e cliente multiplayer.
 - `server.js`: servidor HTTP e salas WebSocket.
-- `atirador.jpg`, `guerreiro.jpg`, `necromante.jpg` e `samurai.jpg`: retratos dos campeões, na mesma pasta que os arquivos do jogo.
+- `atirador.jpg`, `condutor.jpg`, `guerreiro.jpg`, `necromante.jpg`, `samurai.jpg` e `miragem.jpg`: retratos dos campeões, na mesma pasta que os arquivos do jogo.
 
 ## Executar localmente
 
