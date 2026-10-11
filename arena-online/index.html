@@ -1,15 +1,16 @@
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Arena Isométrica 1v1</title>
 <link rel="stylesheet" href="styles.css"></head><body>
-<canvas id="c"></canvas><div id="log"></div>
+<canvas id="c"></canvas><button id="pauseButton" class="pause-toggle" style="display:none" aria-label="Pausar partida" title="Pausar (Esc / Start)" onclick="togglePause()">Ⅱ</button><div id="log"></div>
 <div class="ov menu-screen" id="menu">
  <header class="menu-head"><div><span class="eyebrow">ARENA ISOMÉTRICA · 1v1</span><h1>Escolha seu campeão</h1><p>Seis estilos de combate. Escolha o seu e confirme para entrar na arena.</p></div><button class="notes-open" id="openNotes">✦ Notas de atualização</button></header>
  <section class="menu-options" aria-label="Opções da partida">
-  <div class="option-group"><span class="option-label">MODO</span><div><button class="m on" onclick="setMode(0)">🤖 Um jogador · CPU</button><button class="m" onclick="setMode(1)">🌐 Multiplayer online</button></div></div>
+  <div class="option-group"><span class="option-label">MODO</span><div><button class="m on" onclick="setMode(0)">🤖 Um jogador · CPU</button><button class="m" onclick="setMode(1)">🌐 Multiplayer online</button><button class="m" onclick="setMode(2)">🎮 Multiplayer local</button></div></div>
   <div class="option-group"><span class="option-label">ARENA</span><div><button class="mb on" onclick="setMap(0)">⭕ Arena Circular</button><button class="mb" onclick="setMap(1)">🏛️ Ruínas Vivas</button></div></div>
   <div id="mp" class="room-code" style="display:none"><label for="code">CÓDIGO DA SALA</label><input id="code" maxlength="12" autocomplete="off"><small>Os dois jogadores usam o mesmo código.</small></div>
  </section>
  <div class="champ-grid" id="cards" aria-label="Campeões"></div>
- <footer class="select-footer"><div class="selected-summary"><span class="option-label">CAMPEÃO SELECIONADO</span><strong id="selectedName">Guerreiro</strong><span id="selectedStats">Tanque corpo a corpo · 1500 HP</span></div><div class="select-actions"><span class="input-hint">WASD move · Mouse mira · Q/E/R/F habilidades</span><button id="confirmPick" class="confirm-pick">Confirmar campeão →</button></div></footer>
+ <footer class="select-footer"><div class="selected-summary"><span class="option-label">CAMPEÃO SELECIONADO</span><strong id="selectedName">Guerreiro</strong><span id="selectedStats">Tanque corpo a corpo · 1500 HP</span></div><div class="select-actions"><span class="input-hint" id="controlHint">WASD move · Mouse mira · Q/E/R/F habilidades</span><button id="confirmPick" class="confirm-pick">Confirmar campeão →</button></div></footer>
+ <div class="local-pick-panel" id="localPickPanel" style="display:none"><div class="local-pick-players"><div><strong>Jogador 1</strong><span id="localName1">Necromante</span><button id="editPlayer1" class="local-edit active">Escolher com J1</button><button id="readyPlayer1" class="local-ready">Confirmar escolha do J1</button></div><div><strong>Jogador 2</strong><span id="localName2">Atirador</span><button id="editPlayer2" class="local-edit">Escolher com J2</button><button id="readyPlayer2" class="local-ready">Confirmar escolha do J2</button></div></div><small id="localPickStatus">Cada jogador escolhe e confirma seu campeão.</small><small>Nos controles: esquerda/direita escolhe e A confirma. Com mouse, escolha J1 ou J2 e depois clique no campeão.</small></div>
  <p class="arena-note">Ruínas Vivas: desvie dos blocos que caem e colete itens para ganhar bônus.</p>
 </div>
 <div class="ov notes-screen" id="patches" style="display:none" role="dialog" aria-modal="true" aria-labelledby="notesTitle">
@@ -23,6 +24,7 @@
  </div>
 </div><div class="ov" id="end"><h1 id="res"></h1><button onclick="again()">Jogar novamente</button><button onclick="menu()" style="background:#2c3160">Menu</button></div>
 <div class="ov" id="wait" style="display:none;flex-direction:column;align-items:center;justify-content:center"><h1>🌐 Sala <span id="wc"></span></h1><p id="wt"></p><button onclick="menu()">Cancelar</button></div>
+<div class="ov pause-screen" id="pause" style="display:none" role="dialog" aria-modal="true" aria-labelledby="pauseTitle"><div class="pause-panel"><span class="eyebrow">ARENA ISOMÉTRICA</span><h1 id="pauseTitle">Partida pausada</h1><button onclick="togglePause()">Voltar ao jogo</button><button class="pause-menu-button" onclick="menu()">Voltar ao menu principal</button><p>Pressione Esc ou Start para continuar.</p></div></div>
 <script src="game.js"></script></body></html>
 
 
